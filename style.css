@@ -1,0 +1,153 @@
+@charset "utf-8";
+/**
+* @author Katherin Vela
+* @version 1.0.0
+*/
+
+/**************************************************
+* Modificaciones generales al tema de Blackboard *
+**************************************************/
+
+/* Elimina, para los estudiantes, el tÃ­tulo del item del menÃº del contenido de la pÃ¡gina*/
+.contentBox #pageTitleDiv {
+    display:none
+}
+/* Mantiene, para los profesores, el tÃ­tulo del item del menÃº del contenido de la pÃ¡gina*/
+.contentBox-edit #pageTitleDiv{
+    display:inherit;
+}
+/* Elimina, para los estudiantes, el tÃ­tulo de los elementos de contenido*/
+.read .item h3>span {
+    display:none
+}
+/* Elimina, para los estudiantes, el botÃ³n de mÃ¡s opciones de archivos insertados en un elemento de contenido*/
+#containerdiv .read .details span.contextMenuContainer{
+    display:none!important
+}
+/* Elimina los bordes de todo elemento*/
+#containerdiv .contentListPlain>li {
+    border:none;
+}
+#containerdiv .vtbegenerated{
+    overflow-x: visible;
+}
+
+
+
+/***********************************************************
+* Reglas generales para este diseÃ±o de aula en particular *
+***********************************************************/
+
+/*
+* === Contenido ===
+*/
+#containerdiv .contentListPlain{
+    font-size:1.45rem;
+    line-height:2rem;
+    text-rendering:optimizeLegibility;
+    color:#221F1F;
+}
+#containerdiv .vtbegenerated ol,#containerdiv .vtbegenerated ul {
+    margin:1.5rem 0
+}
+
+/******************************************************
+* DescripciÃ³n de las actividades*
+******************************************************/
+.actividad{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-top: 2px solid gray;
+    padding-top: 30px;
+    margin-top: 10px;
+}
+.actividad span.mayus{
+    text-transform: uppercase;
+}
+.actividad::before,.guia_aprendizaje a::before{
+    display: block;
+}
+.actividad::before{
+    margin-right: 10px;
+    content: url(../img/file.svg);
+    width: 6rem;
+}
+.no-icono::before{
+    display: none;
+}
+.guia_aprendizaje{
+    text-align: center;
+    margin: 20px 0;
+}
+.guia_aprendizaje a{
+    margin: auto;
+}
+.guia_aprendizaje a::before{
+    content: url(../img/file.svg);
+    width: 4.5rem;
+    margin: auto;
+}
+
+
+/******************************************************
+* Enlaces a recursos y de entrega (actividades sicua)*
+******************************************************/
+
+/*
+* === CaracterÃ­sticas generales ===
+*/
+/*Color de los nombres de los elementos*/
+#containerdiv h3>span {
+    color:#2C5697!important;
+}
+#containerdiv h3>a>span{
+    font-weight:400
+}
+/*
+* === Enlaces en el contenido de las instrucciones ===
+*/
+#containerdiv .vtbegenerated a {
+    text-decoration:unset;
+    display: inline-block;
+    border-bottom: 1px dotted;
+}
+/*Subrayado del enlace*/
+#containerdiv .vtbegenerated:hover a {
+    border-bottom-style: solid;
+}
+
+/*
+* === Elementos de entrega (actividades sicua) ===
+*/
+#containerdiv .item{
+    padding-bottom:0; 
+}
+#containerdiv .item>h3{
+    font-size: 100%;
+    width: 100%;
+}
+
+/*Elimina el Ã­cono de los enlaces de curso que genera sicua*/
+#containerdiv .item>h3>img {
+    display:none
+}
+/*
+* â€” Enlace de entrega â€”
+*/
+#containerdiv .read .item>h3>a{
+    float: right;
+}
+#containerdiv .contentListPlain>li:hover .item>h3>a>span{
+    border-bottom-style: solid;
+}
+#containerdiv .item>h3>a::after{
+    content:'';
+    width: 3rem;
+    height: 3rem;
+    background: url(../img/back-arrow.svg) no-repeat center center / 3rem;
+    display: inline-block;
+}
